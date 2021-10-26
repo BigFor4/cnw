@@ -180,7 +180,8 @@ class Main extends Component {
                                               tasks = {tasksEditing}
                                               onCloseForm = {this.onCloseForm}></TaskForm> : '';
     return (
-      <div className="container mt-50">
+      <div className='main'>
+        <div className="container mt-50">
         <div className="text-center">
           <h1>Quản Lý Công Việc</h1>
           <hr />
@@ -213,6 +214,7 @@ class Main extends Component {
             ></TaskList>
           </div>
         </div>
+      </div>
       </div>
     );
 

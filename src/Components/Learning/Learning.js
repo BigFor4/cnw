@@ -44,6 +44,7 @@ class Learning extends Component {
             .then(response => {
                 
                 this.setState({ listTest: response.data.data}, () => this.getVisible());
+                console.log(response)
             })
             .catch((error) => {
             const { message } = error;
@@ -152,7 +153,7 @@ class Learning extends Component {
                                             variant="outlined"
                                             shape="rounded"
                                             style={{marginBottom: '1em',marginTop: '3em', backgroundColor: 'white',borderRadius: '5px'}}
-                                            ></Pagination>
+                                ></Pagination>
                             </div>
                         </div>
                     </div>

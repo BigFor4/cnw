@@ -11,18 +11,14 @@ class Login extends Component {
             boolCheck: false,
             checkLogin: true
         }
-        this.handleUserName1 = this.handleUserName.bind(this);
-        this.handlePassword1 = this.handlePassword.bind(this);
+        this.handleUserName = this.handleUserName.bind(this);
+        this.handlePassword = this.handlePassword.bind(this);
         this.onChangeInput = this.onChangeInput.bind(this);
     }
     
     login() {
-        const params = {
-            userName: this.state.userName,
-            password: this.state.password,
-        };
         var count = 0;
-        api.create().login(params)
+        api.create().login()
         .then(response => {
             for (var i=0; i < response.data.user.length; i++) {
                 if(this.state.userName === response.data.user[i].username && this.state.password === response.data.user[i].userpass){
@@ -83,14 +79,14 @@ class Login extends Component {
                             <p>Tài Khoản</p>
                             <input placeholder="Ex. bigfor4" className="inputpadding" type="text" name="username"   
                                 value={this.state.userName}
-                                onChange={this.handleUserName1}
+                                onChange={this.handleUserName}
                             />
                         </div>
                         <div className="wraper_box--pass">
                             <p>Mật Khẩu</p>
                             <input placeholder="******" className="inputpadding" type={boolCheck === false ? 'password' : 'text'} name="password"  
                                 value={this.state.password}
-                                onChange={this.handlePassword1}
+                                onChange={this.handlePassword}
                             />
                             {checkLogin === true ?'' : <p style={{color: 'red'}}>*Đăng Nhập Thất bại</p>}
                         </div>

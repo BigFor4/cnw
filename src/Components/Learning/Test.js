@@ -8,15 +8,6 @@ class Test extends Component {
         }
     }
     
-    renderListItem() {
-        const { listItem } = this.props;
-        const items = [];
-        for(let i = 0; i < listItem.length; i ++) {
-            const item = <div key={i}>{listItem[i].name + " - " + listItem[i].point + " - " + listItem[i].time} </div>
-            items.push(item);
-        }
-        return items;
-    }
     render(){
         const { listItem } = this.props;
         var elmListItem = listItem.map((listItem,index)=>{

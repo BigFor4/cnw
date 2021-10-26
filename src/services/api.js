@@ -83,7 +83,7 @@ const create = (baseUrl = null) => {
   };
 
 
-    const login = params => generatePost('http://demo4380783.mockable.io/login', params);
+    const login =() => generatePost('http://demo4380783.mockable.io/login');
     const getUserInfo = (id) => generateGet(`/userInfo?id=${id}`);
     const getName = () => generateGet(`/getName`);
     const fetchListTest1 = (page, perPage) => generateGet(`listExample?page=${page}&perpage=${perPage}`);
