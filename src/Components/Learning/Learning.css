@@ -1,0 +1,106 @@
+.wraper-learning{
+    width:100vw;
+    height: 150vh;
+    background-color: gray;
+    text-shadow: 5px 3px 5px #101010;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    background: url(../img/banner.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.control-icon{
+    font-size: 25px;
+    margin-left: 200px;
+    position: absolute;
+}
+.control-icon1{
+    font-size: 25px;
+}
+.thongtin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    background: url(../img/content.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.thongtin-anh img{
+    border-radius: 10rem;
+    width: 10rem;
+    height: 10rem;
+    justify-content: center;
+    margin-top: 5px;
+}
+@media(max-width: 1300px){
+    .control-icon{
+        margin-left: 150px;
+    }
+}
+@media(max-width: 1100px){
+	.thongtin-anh img{
+		width: 8rem;
+        height: 8rem;
+	}
+    .thongtin-text{
+        font-size: 12px;
+    }
+    .thongtin-text h4{
+        font-size: 15px;
+    }
+}
+@media(max-width: 890px){
+	.thongtin-anh img{
+		width: 6rem;
+        height: 6rem;
+	}
+    .thongtin-text{
+        font-size: 10px;
+    }
+    .thongtin-text h4{
+        font-size: 12px;
+    }
+}
+@media(max-width: 760px){
+    .thongtin{
+        width: 100vw;
+    }
+	.thongtin-anh img{
+		width: 10rem;
+        height: 10rem;
+	}
+    .thongtin-text{
+        font-size: 15px;
+    }
+    .thongtin-text h4{
+        font-size: 20px;
+    }
+}
+.thongtin-text{
+    margin-top: -80px;
+    justify-content: center;
+}
+.thongtin-logout{
+    margin-bottom: 50px;
+}
+
+.search{
+    height: 15vh;
+}
+
+.search-input{
+    width: 60%;
+}
+.search-select{
+    margin-left: -30px;
+    width: 130%;
+}
+.page{
+    display: flex;
+    justify-content: center;
+    text-shadow: none;
+}
+
