@@ -3,7 +3,8 @@ import { Component } from 'react';
 import TaskForm from '../Components/Job/TaskForm';
 import Control from '../Components/Job/TaskControl';
 import TaskList from '../Components/Job/TaskList';
-
+import Button from '@mui/material/Button';
+import LogoutIcon from '@mui/icons-material/Logout';
 class Main extends Component {
 
   constructor(props){
@@ -144,6 +145,9 @@ class Main extends Component {
     })
     
   }
+  onclickLogout = () =>{
+    window.location.replace('/login')
+  }
   render(){
     var {tasks,isDislayForm,tasksEditing,filter,sortBy,sortValue} = this.state ; // tường đương var tasks= this.state.tasks
     if(filter){
@@ -182,10 +186,18 @@ class Main extends Component {
     return (
       <div className='main'>
         <div className="container mt-50">
-        <div className="text-center">
-          <h1>Quản Lý Công Việc</h1>
+        <div >
+          <h1 className="text-center" style={{color: 'blue'}}>Quản Lý Công Việc</h1>
+          <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12 icon-logout'>
+            <Button variant="outlined" startIcon={<LogoutIcon /> } onClick = {this.onclickLogout}>
+              Logout
+            </Button>
+          </div>
+          
           <hr />
+          
         </div>
+        
         <div className="row">
           <div className={isDislayForm === true ? 'col-xs-4 col-sm-4 col-md-4 col-lg-4' : ''}>
             {elmTaskForm}

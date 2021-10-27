@@ -1,7 +1,7 @@
 .card{
     color: white;
     width: 80%;
-    height: 25vh;
+    height: auto;
     background-color: rgb(46, 43, 43);
     border: solid 2px black;
     background: url(../img/content.jpg) no-repeat;

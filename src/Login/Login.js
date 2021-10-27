@@ -1,13 +1,16 @@
 import { Component } from 'react';
 import './Login.css'
 import api from "../services/api";
-
+import { googleProvider } from '../config/authMethot';
+import socicalMediaAuth from '../server/auth';
+import Button from '@mui/material/Button';
+import GoogleIcon from '@mui/icons-material/Google';
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             userName: '',
-            password: '',
+            passWord: '',
             boolCheck: false,
             checkLogin: true
         }
@@ -15,14 +18,14 @@ class Login extends Component {
         this.handlePassword = this.handlePassword.bind(this);
         this.onChangeInput = this.onChangeInput.bind(this);
     }
-    
     login() {
         var count = 0;
+
         api.create().login()
         .then(response => {
             for (var i=0; i < response.data.user.length; i++) {
-                if(this.state.userName === response.data.user[i].username && this.state.password === response.data.user[i].userpass){
-                    window.location.replace('/addjob');
+                if(this.state.userName === response.data.user[i].username && this.state.passWord === response.data.user[i].userpass){
+                    window.location.replace('/job');
                 }
                 else{
                     count++;
@@ -66,7 +69,16 @@ class Login extends Component {
     }
     
     handlePassword(event) {
-        this.setState({ password: event.target.value , checkLogin: true})
+        this.setState({ passWord: event.target.value , checkLogin: true})
+    }
+
+    handleOnClick = async (provider) =>{
+        const res = await socicalMediaAuth(provider)
+        console.log(res)
+        
+        if(res){
+            window.location.replace('/job')
+        }
     }
     render(){
         var {boolCheck,checkLogin} = this.state;
@@ -85,7 +97,7 @@ class Login extends Component {
                         <div className="wraper_box--pass">
                             <p>Mật Khẩu</p>
                             <input placeholder="******" className="inputpadding" type={boolCheck === false ? 'password' : 'text'} name="password"  
-                                value={this.state.password}
+                                value={this.state.passWord}
                                 onChange={this.handlePassword}
                             />
                             {checkLogin === true ?'' : <p style={{color: 'red'}}>*Đăng Nhập Thất bại</p>}
@@ -98,9 +110,12 @@ class Login extends Component {
                             onChange={this.onChangeInput} /><span className='ml-5'>Hiển Thị Mật Khẩu</span></p>
                         </div>
                     </div>
-                    <button type='submit' className="btn btn-primary mb-50" 
+                    <button type='submit' className="btn btn-primary " 
                         onClick={() => this.login()}
                     >Đăng Nhập</button>
+                    <Button className='gg-login' style={{marginBottom: '25px' ,color: '#fff'}} variant="outlined" startIcon={<GoogleIcon /> }   onClick={()=>this.handleOnClick(googleProvider)}>
+                        Google Login
+                    </Button>
                 </div>
             </div>
         );

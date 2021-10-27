@@ -7,7 +7,9 @@ class Test extends Component {
 
         }
     }
-    
+    onChange = () =>{
+        
+    }
     render(){
         const { listItem } = this.props;
         var elmListItem = listItem.map((listItem,index)=>{
@@ -15,8 +17,9 @@ class Test extends Component {
                         <div className='card'>
                             <div className=' ml-10 mr-10 mt-25'>
                                 <div className='tieude'>
-                                    <h4>Test: {index+1}</h4>
-                                    <input type="checkbox" className='form-check-input'/>
+                                    <h4>Test: {listItem.id}</h4>
+                                    <input type="checkbox" className='form-check-input' checked={listItem.past === true ? true : false}
+                                    onChange={this.onChange}/>
                                 </div>
                                 <div className='thongso-test'>
                                     <div className='row'>

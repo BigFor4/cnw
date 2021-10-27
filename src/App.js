@@ -1,23 +1,22 @@
+import { Component } from "react";
 
-import { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { BrowserRouter as Router, Switch,Route } from "react-router-dom";
-
-import Main from './main/main';
-import Login from './Login/Login';
-import NotFound from './NotFound/NotFound';
-import Learning from './Components/Learning/Learning';
+import Main from "./main/main";
+import Login from "./Login/Login";
+import NotFound from "./NotFound/NotFound";
+import Learning from "./Components/Learning/Learning";
 class App extends Component {
-  render(){
+  render() {
     return (
       <Router>
-          <Switch>
-            <Route path="/" exact component={Login} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/addjob" exact component={Main} />
-            <Route path="/leaning" exact component={Learning} />
-            <Route component={NotFound}></Route>
-          </Switch>
+        <Switch>
+          <Route path="/" exact component={Login} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/job" exact component={Main} />
+          <Route path="/leaning" exact component={Learning} />
+          <Route component={NotFound}></Route>
+        </Switch>
       </Router>
     );
   }

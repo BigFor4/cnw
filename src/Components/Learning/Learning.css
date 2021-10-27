@@ -1,6 +1,6 @@
 .wraper-learning{
     width:100vw;
-    height: 150vh;
+    height: 100vh;
     background-color: gray;
     text-shadow: 5px 3px 5px #101010;
     color: #fff;
@@ -16,6 +16,7 @@
 }
 .control-icon1{
     font-size: 25px;
+    
 }
 .thongtin{
     display: flex;
@@ -95,12 +96,12 @@
     width: 60%;
 }
 .search-select{
-    margin-left: -30px;
     width: 130%;
 }
 .page{
     display: flex;
     justify-content: center;
     text-shadow: none;
+    margin-top: 50px;
 }
 
