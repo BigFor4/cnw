@@ -13,7 +13,7 @@ class Test extends Component {
     render(){
         const { listItem } = this.props;
         var elmListItem = listItem.map((listItem,index)=>{
-            return <div key={index} className='col-xs-4 col-sm-4 col-md-4 col-lg-4 mt-25 card-test'>
+            return <div key={index} className='col-xs-4 col-sm-4 col-md-4 col-lg-4 mt-15 card-test'>
                         <div className='card'>
                             <div className=' ml-10 mr-10 mt-25'>
                                 <div className='tieude'>

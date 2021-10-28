@@ -26,6 +26,7 @@ class Login extends Component {
             for (var i=0; i < response.data.user.length; i++) {
                 if(this.state.userName === response.data.user[i].username && this.state.passWord === response.data.user[i].userpass){
                     window.location.replace('/job');
+                    localStorage.setItem('user' , JSON.stringify(response))
                 }
                 else{
                     count++;
@@ -78,6 +79,7 @@ class Login extends Component {
         
         if(res){
             window.location.replace('/job')
+            localStorage.setItem('user' , JSON.stringify(res))
         }
     }
     render(){

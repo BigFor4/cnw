@@ -147,6 +147,7 @@ class Main extends Component {
   }
   onclickLogout = () =>{
     window.location.replace('/login')
+    localStorage.removeItem('user');
   }
   render(){
     var {tasks,isDislayForm,tasksEditing,filter,sortBy,sortValue} = this.state ; // tường đương var tasks= this.state.tasks

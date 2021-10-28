@@ -1,12 +1,15 @@
+
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
 class Information extends Component {
     constructor(props) {
         super(props);
         this.state = {
         }
     }
-    
+    onclickLogout = () =>{
+        window.location.replace('/login')
+        localStorage.removeItem('user');
+    }
     render(){
         this.onCloseForm = () =>{
             this.props.onCloseForm();
@@ -32,7 +35,7 @@ class Information extends Component {
                     <div className="speac" >
                     </div>
                     <div className="thongtin-logout">
-                    <Link to='/login' className="btn btn-primary">Logout</Link>
+                    <button onClick={this.onclickLogout} className="btn btn-primary">Logout</button>
                 </div>
             </div>
         );
